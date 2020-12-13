@@ -1,0 +1,8 @@
+# ansible-playbook -i inventory.ini --vault-password-file vault.pass playbook.yml
+
+---
+- hosts: all
+
+  tasks:
+  - include_tasks: tasks/Debian.yml
+    when: ansible_os_family == "Debian"
